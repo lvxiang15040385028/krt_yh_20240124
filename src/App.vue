@@ -7,9 +7,8 @@
     </div>
     <div class="main-top"></div>
     <div class="main-page">
-      <el-scrollbar>
-        <Page1 />
-      </el-scrollbar>
+      <router-view />
+      <Page1 />
     </div>
   </div>
 </template>
@@ -60,12 +59,6 @@ export default {
   bottom: 0;
   right: 0;
   background-color: rgb(255, 190, 255);
-}
-.main-page .el-scrollbar {
-  width: 100%;
-  height: 100%;
-}
-.main-page .el-scrollbar__wrap {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 </style>

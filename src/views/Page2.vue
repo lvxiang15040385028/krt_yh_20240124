@@ -1,5 +1,5 @@
 <template>
-  <div class="page-1">home</div>
+  <div class="page-1">page2</div>
 </template>
 <script></script>
 <style lang="scss">

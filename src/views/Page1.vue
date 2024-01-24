@@ -4,8 +4,8 @@
 <script></script>
 <style lang="scss">
 .page-1 {
-  width: 100%;
-  height: 100%;
+  width: 1000px;
+  height: 1000px;
   background-color: rgb(160, 205, 255);
 }
 </style>
