@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    default-active="Home"
+    :default-active="defaultActive"
     class="el-menu-vertical-demo"
     background-color="#545c64"
     text-color="#fff"
@@ -36,10 +36,27 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      defaultActive: ''
+    }
+  },
   methods: {
     handleSelect(key) {
-      //console.log(key)
-      this.$router.replace({ name: key })
+      if (this.$route.name != key) {
+        console.log(key)
+        this.$router.replace({ name: key })
+      } else {
+        console.log('就是当前页面刷新还是干啥')
+      }
+    }
+  },
+  mounted() {
+    //console.log('---加载完成')
+    const defaultActive = 'Page1'
+    if (this.$route.name != defaultActive) {
+      this.defaultActive = 'Page1'
+      this.$router.replace({ name: this.defaultActive })
     }
   }
 }
