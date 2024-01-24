@@ -1,33 +1,71 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
+  <div class="main-box">
+    <div class="main-menu">
+      <el-scrollbar>
+        <MainMenu />
+      </el-scrollbar>
     </div>
-    <router-view />
+    <div class="main-top"></div>
+    <div class="main-page">
+      <el-scrollbar>
+        <Page1 />
+      </el-scrollbar>
+    </div>
   </div>
 </template>
+<script>
+import MainMenu from './components/MainMenu.vue'
+import Page1 from './views/Page1.vue'
+export default {
+  components: {
+    MainMenu,
+    Page1
+  }
+}
+</script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+.main-box {
+  width: 100%;
+  height: 30%;
+  position: relative;
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.main-menu {
+  width: 201px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(200, 200, 200);
+}
+.main-menu .el-scrollbar {
+  width: 100%;
+  height: 100%;
+}
+.main-menu .el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+.main-top {
+  width: calc(100% - 201px);
+  height: 56px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(190, 255, 255);
+}
+.main-page {
+  width: calc(100% - 201px);
+  height: calc(100% - 56px);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(255, 190, 255);
+}
+.main-page .el-scrollbar {
+  width: 100%;
+  height: 100%;
+}
+.main-page .el-scrollbar__wrap {
+  overflow-x: hidden;
 }
 </style>
